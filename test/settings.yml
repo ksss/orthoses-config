@@ -1,0 +1,13 @@
+str: 'foo'
+int: 42
+float: 3.14
+nulls: null
+bool: true
+hash:
+  foo: 'foo'
+  bar:
+    baz: 'baz'
+array:
+  - 'foo'
+  - 'bar'
+  - 'baz'
