@@ -52,8 +52,10 @@ require 'orthoses/config'
 ```
 
 ```rb
-use Orthoses::Config
+use Orthoses::Config, except_keys: %w[ignore_key]
 ```
+
+- `except_keys` is optional. You can specify root keys to be excluded from generation.
 
 ## Development
 
