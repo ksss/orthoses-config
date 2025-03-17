@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    orthoses-config (0.1.0)
+    orthoses-config (0.2.0)
       config
       orthoses
 
