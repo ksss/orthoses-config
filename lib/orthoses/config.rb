@@ -5,8 +5,9 @@ require_relative "config/version"
 
 module Orthoses
   class Config
-    def initialize(loader)
+    def initialize(loader, except_keys: [])
       @loader = loader
+      @except_keys = except_keys
     end
 
     def call
@@ -14,6 +15,9 @@ module Orthoses
         const_name = ::Config.const_name
         store["Object"] << "#{const_name}: (::Config::Options & ::Config::_Options_Root)"
         settings = ::Object.const_get(const_name)
+        @except_keys.each do |except_key|
+          settings.delete_field(except_key) {} # Ignore if key does not exist
+        end
         create_interface(store, settings, "Root")
       end
     end
