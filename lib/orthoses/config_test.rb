@@ -8,7 +8,8 @@ module ConfigTest
       Orthoses::Store.new(lambda {
         path = File.expand_path("../../test/settings.yml", __dir__)
         ::Config.load_and_set_settings(path)
-      })
+      }),
+      except_keys: ["ignore"]
     ).call
 
     actual = store["Object"].to_rbs

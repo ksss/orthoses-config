@@ -11,3 +11,4 @@ array:
   - 'foo'
   - 'bar'
   - 'baz'
+ignore: 'ignore'
